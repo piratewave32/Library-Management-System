@@ -1,0 +1,80 @@
+#to create the class 
+
+famous_books = [
+    "To Kill a Mockingbird",
+    "1984",
+    "The Great Gatsby",
+    "Pride and Prejudice",
+    "The Hobbit",
+    "Harry Potter and the Philosopher's Stone",
+    "The Catcher in the Rye",
+    "The Alchemist",
+    "One Hundred Years of Solitude",
+    "The Diary of a Young Girl"
+]
+
+   
+class BOOk():
+    
+    def Book(self,tittle,author,book_id):  #this is class of book 
+     self.tittle = tittle
+     self.author = author
+     self.book_id = book_id     
+ 
+class member ():
+    
+     def member_info(self,name,address,phone_no):
+        self.name = name
+        self.address = address
+        self.phone_no = phone_no
+        
+# the book available in libary 
+print("the list of book in libary are given below:")
+for i in range(len(famous_books)):
+    print(i+1,famous_books[i])
+
+        
+    
+while True:
+ try:
+     book_available = input("Enter book  name for available or not:").lower().strip()
+     with open("libary.txt","r")as file:
+         
+         if book_available in file.read().lower():
+            print("Not Available,already take")
+         else:
+            print("Book is Available")
+ except Exception as e:
+    print("Error occured",e)  
+ with open("libary.txt","a") as file:
+     
+     print("the info of libary is given below:")
+     
+     
+     taker = member()
+     name = input("Enter member name:") 
+     address = input("Enter address of member :")     
+     phone_no = input("Enter phone no of member :")
+     taker.member_info(name,address,phone_no)
+ 
+ 
+     listof_taker= BOOk()
+     tittle = input("Enter the BOOK Tittle:")
+     author = input("Enter the author name :")
+     book_id = input("Enter the book id:")
+     listof_taker.Book(tittle,author,book_id)
+ 
+ #for printing the book info
+     print("THE INFO OF BOOK IS GIVEN BELOW")
+     print(f"Book tittle ={listof_taker.tittle} , Author = {listof_taker.author} , Book Id = {listof_taker.book_id}")
+ #for printing the member info
+     print("THE INFO OF BOOK TAKER IS GIVEN BELOW:")
+     print(f"Book taker ={ taker.name}, Address ={taker.address}, Phone no = {taker.phone_no}")
+     file.write(f"Book taker ={ taker.name}, Address ={taker.address}, Phone no = {taker.phone_no}\n")
+     file.write(f"Book tittle ={listof_taker.tittle} , Author = {listof_taker.author} , Book Id = {listof_taker.book_id}\n")
+    
+ to_continue = input("Enter yes for continue ").lower().strip()
+ if to_continue!= "yes":
+      break
+
+        
