@@ -82,4 +82,4 @@ No extra libraries are needed.
 
 Built while learning Python and OOP, with AI help for debugging and code review.
 
-Made by **YOUR NAME**, Kathmandu, Nepal. Feedback and suggestions are welcome: open an issue or leave a comment.
+Made by **piratwwave32**, Hetauda, Nepal. Feedback and suggestions are welcome: open an issue or leave a comment.
